@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Barbería • Reserva de Servicios</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="logo">Barbería <span>El Buen Corte</span></h1>
+      <nav class="nav">
+        <input id="search" placeholder="Buscar servicio...">
+        <button id="open-cart" class="btn">Reservas (<span id="cart-count">0</span>)</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h2>Reserva tu corte o afeitado profesional</h2>
+      <p>Servicios clásicos y modernos — estilistas con cita previa.</p>
+    </section>
+
+    <section class="controls">
+      <label>Ordenar:
+        <select id="sort">
+          <option value="default">Recomendado</option>
+          <option value="price-asc">Precio ↑</option>
+          <option value="price-desc">Precio ↓</option>
+          <option value="duration-asc">Duración ↑</option>
+        </select>
+      </label>
+    </section>
+
+    <section id="services" class="services-grid"></section>
+  </main>
+
+  <aside id="cart" class="cart">
+    <div class="cart-header">
+      <h3>Tu reserva</h3>
+      <button id="close-cart">✕</button>
+    </div>
+    <div id="cart-items" class="cart-items">
+      <p class="empty">No has agregado servicios.</p>
+    </div>
+    <div class="cart-footer">
+      <div class="totals">
+        <span>Total:</span>
+        <strong id="cart-total">$0</strong>
+      </div>
+      <form id="booking-form">
+        <label>Nombre
+          <input type="text" id="client-name" required placeholder="Tu nombre">
+        </label>
+        <label>Fecha y hora
+          <input type="datetime-local" id="client-datetime" required>
+        </label>
+        <button type="submit" class="btn primary">Confirmar reserva</button>
+      </form>
+    </div>
+  </aside>
+
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button id="close-modal" class="modal-close">✕</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Barbería El Buen Corte — Calle Falsa 123 • Reservas online</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
